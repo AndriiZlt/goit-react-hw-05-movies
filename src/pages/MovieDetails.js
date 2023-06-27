@@ -2,7 +2,7 @@ import css from '../components/styles.module.css';
 import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
 import { useRef, useState, useEffect, Suspense } from 'react';
 import ImagePlaceholder from '../images//placeholder.png';
-import APIKEY from './API_KEY';
+import APIKEY from '../components/API_KEY';
 
 const Movie = () => {
   const location = useLocation();
@@ -15,9 +15,6 @@ const Movie = () => {
   const [genres, setGenres] = useState([]);
   const [isAvailable, setIsAvailable] = useState(true);
   const [id, setId] = useState('');
-
-  const [results, setResults] = useState();
-
   const movie = useParams();
 
   useEffect(() => {
@@ -29,7 +26,6 @@ const Movie = () => {
         console.log('movie data', data);
         if (data.title) {
           setIsAvailable(true);
-          setResults(data);
           setPosterPath(data.poster_path);
           setTitle(data.title);
           const date = new Date(data.release_date);
