@@ -2,7 +2,7 @@ import css from '../components/styles.module.css';
 import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
 import { useRef, useState, useEffect, Suspense } from 'react';
 import ImagePlaceholder from '../images//placeholder.png';
-import APIKEY from '../components/API_KEY';
+import APIKEY from '../components/APIKEY';
 
 const Movie = () => {
   const location = useLocation();

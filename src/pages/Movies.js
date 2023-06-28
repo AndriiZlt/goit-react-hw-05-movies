@@ -1,5 +1,5 @@
 import css from '../components/styles.module.css';
-import APIKEY from '../components/API_KEY';
+import APIKEY from '../components/APIKEY';
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 

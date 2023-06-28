@@ -1,6 +1,6 @@
 import { useOutletContext } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import API_KEY from './API_KEY';
+import API_KEY from './APIKEY';
 import css from './styles.module.css';
 
 const Cast = () => {

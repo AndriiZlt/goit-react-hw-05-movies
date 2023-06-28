@@ -1,6 +1,6 @@
 import { useOutletContext } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import APIKEY from './API_KEY';
+import APIKEY from './APIKEY';
 import css from './styles.module.css';
 
 const Reviews = () => {
