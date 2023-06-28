@@ -27,7 +27,7 @@ const Movies = () => {
 
   const fetchHandler = query => {
     fetch(
-      `http://api.themoviedb.org/3/search/movie?api_key=${APIKEY}&query=${query}`
+      `https://api.themoviedb.org/3/search/movie?api_key=${APIKEY}&query=${query}`
     )
       .then(r => r.json())
       .then(data => {
