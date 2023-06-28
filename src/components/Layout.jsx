@@ -10,7 +10,7 @@ const Layout = () => {
           <li>
             <NavLink
               className={css.navLink}
-              to="/"
+              to="/goit-react-hw-05-movies/"
               style={({ isActive }) => ({
                 textDecoration: isActive ? 'underline' : 'none',
               })}
@@ -21,7 +21,7 @@ const Layout = () => {
           <li>
             <NavLink
               className={css.navLink}
-              to="/movies"
+              to="/goit-react-hw-05-movies/movies"
               style={({ isActive }) => ({
                 textDecoration: isActive ? 'underline' : 'none',
               })}
