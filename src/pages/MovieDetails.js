@@ -49,43 +49,37 @@ const Movie = () => {
         <button type="button">🡸 Go back</button>
       </Link>
       {isAvailable ? (
-        <div className={css.movie}>
-          <div className={css.poster}>
-            <img
-              src={
-                posterPath
-                  ? `https://image.tmdb.org/t/p/w300${posterPath}`
-                  : ImagePlaceholder
-              }
-              alt="Movie poster"
-            />
-          </div>
-
-          <div className={css.movieDetails}>
-            <h2>
-              {title} ({year})
-            </h2>
-            <p>User Score: {score}%</p>
-            <h3>Overview</h3>
-            <p>{overview}</p>
-            <h3>Genres</h3>
-            <ul className={css.genres}>
-              {genres.map(genre => (
-                <li key={genre.id}>
-                  <p>{genre.name}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <br />
-        </div>
-      ) : (
-        <div className={css.movie}>
-          <h1>Sorry, we have no information about this movie...</h1>
-        </div>
-      )}
-      {isAvailable && (
         <>
+          <div className={css.movie}>
+            <div className={css.poster}>
+              <img
+                src={
+                  posterPath
+                    ? `https://image.tmdb.org/t/p/w300${posterPath}`
+                    : ImagePlaceholder
+                }
+                alt="Movie poster"
+              />
+            </div>
+
+            <div className={css.movieDetails}>
+              <h2>
+                {title} ({year})
+              </h2>
+              <p>User Score: {score}%</p>
+              <h3>Overview</h3>
+              <p>{overview}</p>
+              <h3>Genres</h3>
+              <ul className={css.genres}>
+                {genres.map(genre => (
+                  <li key={genre.id}>
+                    <p>{genre.name}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <br />
+          </div>
           <h3>Additional information:</h3>
           <ul className={css.infoList}>
             <li className={css.info}>
@@ -99,6 +93,10 @@ const Movie = () => {
             <Outlet context={[id, setId]} />
           </Suspense>
         </>
+      ) : (
+        <div className={css.movie}>
+          <h1>Sorry, we have no information about this movie...</h1>
+        </div>
       )}
     </div>
   );
