@@ -88,6 +88,7 @@ p {
 
 .castList {
   list-style: none;
+  padding: 0 40px;
 }
 
 .actorLi {
