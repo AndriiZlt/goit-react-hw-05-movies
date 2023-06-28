@@ -1,6 +1,6 @@
 import { useOutletContext } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import API_KEY from './APIKEY';
+import APIKEY from './APIKEY';
 import css from './styles.module.css';
 
 const Cast = () => {
@@ -8,7 +8,7 @@ const Cast = () => {
   const [cast, setCast] = useState([]);
 
   useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}`)
+    fetch(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${APIKEY}`)
       .then(response => response.json())
       .then(data => {
         setCast(data.cast);
