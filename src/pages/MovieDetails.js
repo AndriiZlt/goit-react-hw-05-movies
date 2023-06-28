@@ -84,19 +84,22 @@ const Movie = () => {
           <h1>Sorry, we have no information about this movie...</h1>
         </div>
       )}
-      <h3>Additional information:</h3>
-      <ul className={css.infoList}>
-        <li className={css.info}>
-          <Link to="cast">Cast</Link>
-        </li>
-        <li className={css.info}>
-          <Link to="reviews">Reviews</Link>
-        </li>
-      </ul>
-
-      <Suspense fallback={<div>Loading...</div>}>
-        <Outlet context={[id, setId]} />
-      </Suspense>
+      {isAvailable && (
+        <>
+          <h3>Additional information:</h3>
+          <ul className={css.infoList}>
+            <li className={css.info}>
+              <Link to="cast">Cast</Link>
+            </li>
+            <li className={css.info}>
+              <Link to="reviews">Reviews</Link>
+            </li>
+          </ul>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Outlet context={[id, setId]} />
+          </Suspense>
+        </>
+      )}
     </div>
   );
 };
